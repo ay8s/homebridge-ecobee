@@ -201,8 +201,8 @@ EcobeePlatform.prototype.update = function (callback) {
         case 0:
           this.log.info("Update sensors");
           this.sensors(reply);
-          setTimeout(this.update.bind(this), 31*1000);
-          this.log.info("Wait | 30 seconds");
+          setTimeout(this.update.bind(this), 180*1000);
+          this.log.info("Wait | 3 minutes per ecobee api guidelines");
           if (callback) callback();
           break;
         case 14:
