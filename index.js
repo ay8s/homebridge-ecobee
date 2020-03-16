@@ -11,5 +11,5 @@ module.exports = function (homebridge) {
   EcobeeSensor = require("./source/sensor.js")(Accessory, Service, Characteristic);
   EcobeePlatform = require("./source/platform.js")(UUIDGen, Accessory, EcobeeSensor);
 
-  homebridge.registerPlatform("homebridge-ecobee3-sensors", "Ecobee 3 Sensors", EcobeePlatform, true);
+  homebridge.registerPlatform("homebridge-ecobee", "Ecobee Sensors", EcobeePlatform, true);
 };

@@ -16,10 +16,17 @@ module.exports = function (uuidGen, accessory, ecobeeSensor) {
 
 function EcobeePlatform(log, config, homebridgeAPI) {
  if (!config) {
-    log.warn(" Ignoring Ecobee3 Sensor Plugin setup because it is not configured");
+    log.warn(" Ignoring Ecobee Sensor Plugin setup because it is not configured");
     this.disabled = true;
     return;
   }
+
+  if (!config.app_key) {
+    log.warn(" Ecobee Sensor Plugin requires an appKey value. Become a developer at https://www.ecobee.com/developers/ and create a new app at https://www.ecobee.com/consumerportal/");
+    this.disabled = true;
+    return;
+  }
+
   this.log = log;
   this.config = config || {};
 
@@ -29,7 +36,7 @@ function EcobeePlatform(log, config, homebridgeAPI) {
   this.excludeTemperatureSensors = this.config.exclude_temperature_sensors || false;
   this.excludeThermostat = this.config.exclude_thermostat || false;
 
-  this.appKey = this.config.app_key || "DALCINnO49EYOmMfQQxmx7PYofM1YEGo";
+  this.appKey = this.config.app_key;
   this.accessToken = null;
   this.refreshToken = null;
 
@@ -73,7 +80,7 @@ EcobeePlatform.prototype.pin = function () {
     path: '/authorize?' + Querystring.stringify({
       'response_type': 'ecobeePin',
       'client_id': this.appKey,
-      'scope': 'smartRead'
+      'scope': 'smartWrite'
     }),
     method: 'GET'
   };
@@ -228,7 +235,10 @@ EcobeePlatform.prototype.sensors = function (reply) {
   }
 
   for (var thermostatConfig of reply.thermostatList) {
-    if (thermostatConfig.modelNumber != 'athenaSmart') {
+    //athenaSmart=ecobee3
+    //apolloSmart=ecobee4
+    //vulcanSmart=ecobee5
+    if (thermostatConfig.modelNumber != 'athenaSmart' && thermostatConfig.modelNumber != 'apolloSmart' && thermostatConfig.modelNumber != 'vulcanSmart') {
       this.log.info("Not supported thermostat | " + thermostatConfig.name + " (" + thermostatConfig.modelNumber + ")");
       continue
     }

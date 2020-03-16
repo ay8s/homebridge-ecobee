@@ -1,17 +1,17 @@
 {
-  "name": "homebridge-ecobee3-sensors",
+  "name": "homebridge-ecobee",
   "version": "0.1.5",
-  "description": "Homebridge plugin that exposes Ecobee 3 sensors as HomeKit accessories",
+  "description": "Homebridge plugin that exposes Ecobee 3-5 sensors as HomeKit accessories",
   "license": "MIT",
   "keywords": [
-    "homebridge-plugin", "ecobee", "ecobee3", "smart thermostat", "sensor"
+    "homebridge-plugin", "ecobee", "ecobee3", "ecobee4", "ecobee5", "smart thermostat", "sensor"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/vojtamolda/homebridge-ecobee3-sensors.git"
+    "url": "git://github.com/jrogaishio/homebridge-ecobee.git"
   },
   "bugs": {
-    "url": "http:://github.com/vojtamolda/homebridge-ecobee3-sensors/issues"
+    "url": "http:://github.com/jrogaishio/homebridge-ecobee/issues"
   },
   "engines": {
     "node": ">=4.3.2",

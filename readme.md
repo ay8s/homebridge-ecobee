@@ -1,13 +1,13 @@
 
-# homebridge-ecobee3-sensors
+# homebridge-ecobee
 
-[![NPM version](https://badge.fury.io/js/homebridge-ecobee3-sensors.svg)](https://badge.fury.io/js/homebridge-ecobee3-sensors)
+[![NPM version](https://badge.fury.io/js/homebridge-ecobee.svg)](https://badge.fury.io/js/homebridge-ecobee)
 
 [Homebridge](https://github.com/nfarina/homebridge) plugin for exposing wireless temperature and occupancy sensors of your [Ecobee 3 Thermostat](https://www.ecobee.com/ecobee3/) as [HomeKit](https://www.apple.com/ios/home/) accesories. The thermostat itself is a HomeKit accessory, but the sensors are not visible in the [Home app](https://www.apple.com/ios/home/) out of the box. This plugin fixes this problem, so you can have home automation rules based on room occupancy.
 
 <img src="images/overview.png">
 
-Homebridge runs on top of [Node.js](https://nodejs.org) server and is an open-source implementation of the Apple HomeKit protocol. HomeKit provides the API between your Apple device (i.e. Watch or iPhone) and your home automation server (i.e. Raspberry Pi or Mac Mini). This Homebridge [plugin](https://www.npmjs.com/package/homebridge-ecobee3-sensors) relays the data from [wireless room sensors](https://shop.ecobee.com/products/room-sensors) provided by the [Ecobee API](https://www.ecobee.com/home/developer/api/introduction/index.shtml) and makes them available in HomeKit.
+Homebridge runs on top of [Node.js](https://nodejs.org) server and is an open-source implementation of the Apple HomeKit protocol. HomeKit provides the API between your Apple device (i.e. Watch or iPhone) and your home automation server (i.e. Raspberry Pi or Mac Mini). This Homebridge [plugin](https://www.npmjs.com/package/homebridge-ecobee) relays the data from [wireless room sensors](https://shop.ecobee.com/products/room-sensors) provided by the [Ecobee API](https://www.ecobee.com/home/developer/api/introduction/index.shtml) and makes them available in HomeKit.
 
 
 
@@ -20,7 +20,7 @@ Make sure your systems matches the [prerequisites](#what-are-the-prerequisites-f
 
 ```sh
 [sudo] npm install -g --unsafe-perm homebridge node-gyp
-[sudo] npm install -g homebridge-ecobee3-sensors
+[sudo] npm install -g homebridge-ecobee
 ```
 
 **Note** _Depending on your privileges `-g` flag may need root permissions to install packages to the global `npm` module directory._
@@ -113,7 +113,7 @@ Once all of your sensors has been added to the HomeKit database, besides using t
 
 ## Troubleshooting
 
-If you encouter a different problem than something posted below, please, open an [issue](https://github.com/vojtamolda/homebridge-ecobee3-sensors/issues).
+If you encouter a different problem than something posted below, please, open an [issue](https://github.com/jrogaishio/homebridge-ecobee/issues).
 
 ### Home app can't discover any nearby accessories
 Make sure the Apple device and the Homebridge server are on the same subnet and connected to the same wifi router.
