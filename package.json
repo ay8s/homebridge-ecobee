@@ -11,7 +11,7 @@
     "url": "git://github.com/jrogaishio/homebridge-ecobee.git"
   },
   "bugs": {
-    "url": "http:://github.com/jrogaishio/homebridge-ecobee/issues"
+    "url": "http://github.com/jrogaishio/homebridge-ecobee/issues"
   },
   "engines": {
     "node": ">=4.3.2",
