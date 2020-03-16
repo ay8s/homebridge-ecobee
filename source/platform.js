@@ -22,7 +22,7 @@ function EcobeePlatform(log, config, homebridgeAPI) {
   }
 
   if (!config.app_key) {
-    log.warn(" Ecobee Sensor Plugin requires an appKey value. Become a developer at https://www.ecobee.com/developers/ and create a new app at https://www.ecobee.com/consumerportal/");
+    log.warn(" Ecobee Sensor Plugin requires an app_key value. Become a developer at https://www.ecobee.com/developers/ and create a new app at https://www.ecobee.com/consumerportal/");
     this.disabled = true;
     return;
   }
