@@ -238,7 +238,7 @@ EcobeePlatform.prototype.sensors = function (reply) {
     //athenaSmart=ecobee3
     //apolloSmart=ecobee4
     //vulcanSmart=ecobee5
-    if (thermostatConfig.modelNumber != 'athenaSmart' && thermostatConfig.modelNumber != 'apolloSmart' && thermostatConfig.modelNumber != 'vulcanSmart') {
+    if (thermostatConfig.modelNumber != 'athenaSmart' && thermostatConfig.modelNumber != 'apolloSmart' && thermostatConfig.modelNumber != 'nikeSmart' && thermostatConfig.modelNumber != 'vulcanSmart') {
       this.log.info("Not supported thermostat | " + thermostatConfig.name + " (" + thermostatConfig.modelNumber + ")");
       continue
     }
